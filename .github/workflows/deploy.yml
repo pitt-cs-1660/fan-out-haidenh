@@ -140,6 +140,7 @@ jobs:
             --role ${{ env.AWS_LAMBDA_ROLE_ARN }} \
             --timeout 30 \
             --memory-size 128 \
+            --dead-letter-config TargetArn=arn:aws:sqs:us-east-1:520112946962:image-processing-dlq \
             --region ${{ env.AWS_REGION }}
 
       - name: Update image-validator Lambda function
